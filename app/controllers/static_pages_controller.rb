@@ -1,16 +1,10 @@
 class StaticPagesController < ApplicationController
-  def IMPORTS
+  def sessions
   end
 
-  def SESSIONS
+  def csas
   end
 
-  def CSAS
-  end
-
-  def STAFF
-  end
-
-  def IMPORT_ERRORS
+  def staff
   end
 end

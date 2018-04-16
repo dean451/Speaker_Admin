@@ -1,29 +1,35 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get IMPORTS" do
-    get static_pages_IMPORTS_url
+
+  def setup
+    @base_title = "Speaker Admin"
+  end
+
+  test "should get root" do
+    get static_pages_sessions_url
     assert_response :success
   end
 
-  test "should get SESSIONS" do
-    get static_pages_SESSIONS_url
+  test "should get sessions" do
+    get static_pages_sessions_url
     assert_response :success
+    assert_select "title", "Sessions | Speaker Admin"
+
   end
 
-  test "should get CSAS" do
-    get static_pages_CSAS_url
+  test "should get csas" do
+    get static_pages_csas_url
     assert_response :success
+    assert_select "title", "CSA's | Speaker Admin"
+
   end
 
-  test "should get STAFF" do
-    get static_pages_STAFF_url
+  test "should get staff" do
+    get static_pages_staff_url
     assert_response :success
-  end
+    assert_select "title", "Staff | Speaker Admin"
 
-  test "should get IMPORT_ERRORS" do
-    get static_pages_IMPORT_ERRORS_url
-    assert_response :success
   end
 
 end

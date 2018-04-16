@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/IMPORTS'
+  get 'static_pages/sessions'
 
-  get 'static_pages/SESSIONS'
+  get 'static_pages/csas'
 
-  get 'static_pages/CSAS'
+  get 'static_pages/staff'
 
-  get 'static_pages/STAFF'
-
-  get 'static_pages/IMPORT_ERRORS'
-
-  root 'application#hello'
+  root 'static_pages#sessions'
 
 
 end
