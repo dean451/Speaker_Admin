@@ -7,4 +7,11 @@ class StaticPagesController < ApplicationController
 
   def staff
   end
+
+  def about
+  end
+
+  def contact
+  end
+
 end
