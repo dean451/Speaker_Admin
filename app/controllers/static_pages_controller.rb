@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def staff
+    @users = User.all
   end
 
   def about

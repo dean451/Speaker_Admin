@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-    <h1>Staff</h1>
-    <p>
-      Staff
-    </p>
-  </body>
-</html>
+<% provide(:title, 'Staff') %>
+<h1>Staff</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_for user, size: 50 %>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
