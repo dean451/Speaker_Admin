@@ -1,0 +1,8 @@
+<li id="session-<%= session.id %>">
+  <%= link_to gravatar_for(session.user, size: 50), session.user %>
+  <span class="user"><%= link_to session.user.name, session.user %></span>
+  <span class="content"><%= session.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(session.created_at) %> ago.
+  </span>
+</li>

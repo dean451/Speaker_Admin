@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  resources :admins
+  resources :admins, only: [:index]
 
   root 'static_pages#sessions'
 
@@ -23,8 +23,12 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  post '/sessions', to: 'session#create'
+
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :session,          only: [:create, :destroy]
+
 
 end

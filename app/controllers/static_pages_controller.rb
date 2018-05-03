@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def sessions
+    @session = current_user.sessions.build if logged_in?
   end
 
   def csas
