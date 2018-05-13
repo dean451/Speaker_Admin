@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   def sessions
-    @session = current_user.sessions.build if logged_in?
+    if logged_in?
+      @session = current_user.sessions.build
+      @feed_items = current_user.feed.paginate(page: params[:page])
+    end
   end
 
   def csas
