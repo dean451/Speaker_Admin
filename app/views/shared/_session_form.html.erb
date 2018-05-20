@@ -1,8 +1,8 @@
 <%= form_for(@session) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.label :title, 'Title' %>
-    <%= f.text_field :title, placeholder: "Title..." %>
+    <%= f.label :title, 'Title (50 Characters)' %>
+    <%= f.text_field :title, placeholder: "#{@session.title}" %>
   </div>
   <div class="field">
     <h4>Long Description</h4>
