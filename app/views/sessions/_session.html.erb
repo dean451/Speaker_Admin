@@ -1,7 +1,8 @@
 <li id="session-<%= session.id %>">
   <%= link_to gravatar_for(session.user, size: 50), session.user %>
   <span class="user"><%= link_to session.user.name, session.user %></span>
-  <span class="content"><%= session.content %></span>
+  <!-- <span class="content"><%= link_to session.title if session.title.present? %></span> -->
+  <span class="content"><%= session.long_description %></span>
   <%= image_tag session.picture.url if session.picture? %>
 
   <span class="timestamp">

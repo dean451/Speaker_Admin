@@ -10,14 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513200848) do
+ActiveRecord::Schema.define(version: 20180520002751) do
 
   create_table "sessions", force: :cascade do |t|
-    t.text "content"
+    t.text "long_description"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.string "title"
+    t.string "twitter_hashtag"
+    t.string "format"
+    t.string "track"
+    t.string "level"
+    t.string "presentation_materials"
     t.index ["user_id", "created_at"], name: "index_sessions_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end

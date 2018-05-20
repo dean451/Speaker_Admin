@@ -23,7 +23,7 @@ class SessionController < ApplicationController
   private
 
     def session_params
-      params.require(:session).permit(:content, :picture)
+      params.require(:session).permit(:long_description, :title, :twitter_hashtag, :presentation_materials, :picture)
     end
 
     def correct_user

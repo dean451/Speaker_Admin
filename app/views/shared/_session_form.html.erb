@@ -1,12 +1,38 @@
 <%= form_for(@session) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new session..." %>
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title, placeholder: "Title..." %>
+  </div>
+  <div class="field">
+    <%= f.label :level, 'Your session level was confirmed during the acceptance period. This cannot be changed.' %>
+    <%= f.text_area :long_description, placeholder: "Long description..." %>
+  </div>
+  <div class="field">
+    <%= f.label :level, 'Your session level was confirmed during the acceptance period. This cannot be changed.', class: "form-control-placeholder" %>
+    <%= f.text_field :twitter_hashtag, placeholder: "Twitter hashtag...", disabled: true %>
+  </div>
+  <div class="field">
+    <%= f.label :format, 'You cannot change your format via this interface. Use the contact form to request a category change.' %>
+    <%= f.text_field :format, placeholder: "Format...", disabled: true %>
+  </div>
+  <div class="field">
+    <%= f.label :level, 'Your track was confirmed during the acceptance period. This cannot be changed.' %>
+    <%= f.text_field :track, placeholder: "Track...", disabled: true%>
+  </div>
+  <div class="field">
+    <%= f.label :level, 'Your session level was confirmed during the acceptance period. This cannot be changed.' %>
+    <%= f.text_field :level, placeholder: "Level..."%>
+  </div>
+  <div class="field">
+    <%= f.label :presentation_materials, 'This presentation should be either a replicate or example of the presentation that will be presented during your session, and this link will appear with your listing in the online schedule. You will still need to bring your presentation with you to your session room. This does NOT apply to Meet Ups or Mentors, which do NOT allow for A/V presentations.' %>
+    <%= f.text_field :presentation_materials, placeholder: "https://www.youtube.com/watch?v=uOe59xft8kQ", label: "presentation_materials" %>
   </div>
   <span class="picture">
-    <%= f.submit "Post Session", class: "btn btn-primary" %>
+    <span>Upload image for Schedule and Mobile App (Optional)</span>
     <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
   </span>
+      <%= f.submit "Post Session", class: "btn btn-primary" %>
 <% end %>
 
 <script type="text/javascript">

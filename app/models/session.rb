@@ -5,7 +5,7 @@ class Session < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   validates :user_id, presence: true
-  validates :content, presence: true, length: { maximum: 500 }
+  validates :long_description, presence: true, length: { maximum: 500 }
   validate  :picture_size
 
   private
