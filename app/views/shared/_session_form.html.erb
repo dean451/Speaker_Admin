@@ -5,31 +5,41 @@
     <%= f.text_field :title, placeholder: "Title..." %>
   </div>
   <div class="field">
-    <%= f.label :level, 'Your session level was confirmed during the acceptance period. This cannot be changed.' %>
+    <h4>Long Description</h4>
+    <%= f.label :long_description, '500 characters for online schedule' %>
     <%= f.text_area :long_description, placeholder: "Long description..." %>
   </div>
   <div class="field">
-    <%= f.label :level, 'Your session level was confirmed during the acceptance period. This cannot be changed.', class: "form-control-placeholder" %>
-    <%= f.text_field :twitter_hashtag, placeholder: "Twitter hashtag...", disabled: true %>
+    <h4>Twitter Hashtag</h4>
+    <%= f.label :twitter_hashtag, 'Your hashtag will be displayed in your session room and in schedules. Short and unique hashtags will work best. (Ex: \'futurefilm\' is better than \'film\' for a session about the future of film.)', class: "form-control-placeholder" %>
+    <%= f.text_field :twitter_hashtag, placeholder: "Please do not include the # symbol"%>
   </div>
   <div class="field">
+    <h4>Format</h4>
     <%= f.label :format, 'You cannot change your format via this interface. Use the contact form to request a category change.' %>
-    <%= f.text_field :format, placeholder: "Format...", disabled: true %>
+    <%= f.text_field :format, placeholder: "#{@session.format}", disabled: true %>
   </div>
   <div class="field">
-    <%= f.label :level, 'Your track was confirmed during the acceptance period. This cannot be changed.' %>
-    <%= f.text_field :track, placeholder: "Track...", disabled: true%>
+    <h4>Track</h4>
+    <%= f.label :track, 'Your track was confirmed during the acceptance period. This cannot be changed.' %>
+    <%= f.text_field :track, placeholder: "#{@session.track}", disabled: true %>
   </div>
   <div class="field">
+    <h4>Level</h4>
     <%= f.label :level, 'Your session level was confirmed during the acceptance period. This cannot be changed.' %>
-    <%= f.text_field :level, placeholder: "Level..."%>
+    <%= f.text_field :level, placeholder: "#{@session.level}", disabled: true %>
   </div>
   <div class="field">
+    <h4>Presentation Materials</h4>
     <%= f.label :presentation_materials, 'This presentation should be either a replicate or example of the presentation that will be presented during your session, and this link will appear with your listing in the online schedule. You will still need to bring your presentation with you to your session room. This does NOT apply to Meet Ups or Mentors, which do NOT allow for A/V presentations.' %>
     <%= f.text_field :presentation_materials, placeholder: "https://www.youtube.com/watch?v=uOe59xft8kQ", label: "presentation_materials" %>
   </div>
   <span class="picture">
-    <span>Upload image for Schedule and Mobile App (Optional)</span>
+    <h4>Upload image for Schedule and Mobile App (Optional)</h4>
+    <%= f.label :picture, 'This should be an eye-catching image that represents your session (not a speaker headshot) that you have full rights to use.
+This is not an opportunity to sell a product, service, or company, so please do not use images with logos.
+The required aspect ratio for the session image is 7:5, so aim for a resolution around 1330x950 pixels. The crop tool will ensure that the dimensions are correct.' %>
+
     <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
   </span>
       <%= f.submit "Post Session", class: "btn btn-primary" %>
